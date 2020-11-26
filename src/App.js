@@ -14,7 +14,9 @@ class App extends React.Component{
         data : { movies }
       }
     } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+    console.log({movies});
     this.setState({movies:movies , isLoading : false});
+    
   }
   componentDidMount(){
     console.log("Mounted");
@@ -23,15 +25,20 @@ class App extends React.Component{
   render(){
     const { isLoading , movies } = this.state;
     return (
-    <section class = "container">
+    <section className = "container">
       {isLoading ? (
-        <div class = "loader">
-          <span class = "loader__text">"Loading"</span>
+        <div className = "loader">
+          <span className = "loader__text">Loading...</span>
         </div> 
         ) : ( 
-          <div class = "movies">
+          <div className = "movies">
           {
             movies.map(movie => {
+
+              if(movie.summary === ""){
+                // eslint-disable-next-line
+                return;
+              }
             return <Movie 
             key = {movie.id} 
             id={movie.id} 
@@ -39,6 +46,7 @@ class App extends React.Component{
             title={movie.title} 
             summary={movie.summary} 
             poster={movie.medium_cover_image}
+            genres = {movie.genres}
             />})
           }
           </div>
@@ -60,9 +68,9 @@ export default App;
 // 자식component는 해당 props를 'props'로 직접 받거나, 해당 property의 이름 { property } 와 같이 직접 호출도 가능하다. 
 // <html></html>코드 내에서 Js사용시 {} 필요. ex) {FoodIlike.map( dish => < Test name = {dish.name} />)}
 // map은 각 array 의 item들을 object로 반환한다. 
-// map Recap : React의 모든 각각의 element들은 서로 다를 필요가 있다. 그래서 각 각의 object 내에 id값을 줘 React내부에서 요소들의 차이를 두게한다.
+// map Recap : React의 모든 각각의 element들은 서로 다를 필요가 있다. 그래서 각 각의 object 내에 key값을 줘 React내부에서 요소들의 차이를 두게한다.
 //그렇지 않으면, Warning: Each child in a list should have a unique "key" prop. 이러한 고유성을 상실했다는 오류가 발생한다.
-// 그래서 만약 component의 props로 자료형이 같은 배열을 가지게 되면 error가 발생.그래서 각 각의 object 내에 id값을 줘 React내부에서 요소들의 차이를 두게한다.
+// 그래서 만약 component의 props로 자료형이 같은 배열을 가지게 되면 error가 발생.그래서 각 각의 object 내에 key값을 줘 React내부에서 요소들의 차이를 두게한다.
 // npm i proptypes 후 import Proptypes from "prop-types";
 // propTypes를 통해 props의 promising을 걸어 filtering 가능.
 //예시) Test.propTypes = { rating  : PropTypes.number.isRequired };
