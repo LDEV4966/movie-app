@@ -1,6 +1,8 @@
 .movie {
     width: 45%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: white;
     margin-bottom: 70px;
     font-weight: 300;
@@ -9,6 +11,10 @@
     border-radius: 50px;
     box-shadow: 13px 13px 20px 5px  rgba(50, 50, 93, 0.25); 
 
+}
+.movie a {
+    display: flex;
+    text-decoration: none;
 }
 .movie__poster img {
     position: relative;
@@ -39,8 +45,9 @@
 .movie__genres .movie__genre{
     font-size: 14px;
     margin-right: 10px;
+    color: #5a5a5a;
 }
-.movie__year,
+
 .movie__summary{
     color: #5a5a5a;
 } 
