@@ -50,7 +50,8 @@ class Detail extends React.Component {
                             ) : (
                                 <div className = "youtube__contents">
                                     <h1> Trailer  </h1>
-                                    <iframe className="youtube__video" width="500" height="400" title={movie.title} src = {`http://www.youtube.com/embed/${videoId}`} frameBorder = "0" allowFullScreen></iframe>
+                                    <iframe className="youtube__video" width="500" height="400" title={movie.title} src = {`http://www.youtube.com/embed/${videoId}`} frameBorder = "0" allowFullScreen>
+                                    </iframe>
                                 </div>
                             )
                             }
