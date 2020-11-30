@@ -18,11 +18,11 @@ Create simple movie-app with React JS
 
 ### technique
 
-* Use 'react-router-dom' to use HashRouter, Navigation can changes Dom.
+* Use 'react-router-dom' class to use HashRouter, Navigation can changes Dom.
 * Use Link method to send Data like pathName and State to another component
 * Use 'axios'class to get Api info and processed it asynchronously
 * Use 'propTypes' class to filter the exact data we want
-* Use iframe tag to up load youtube-video on my reactapp
+* Use iframe tag to up load youtube-video on my react-app
 
 
 
