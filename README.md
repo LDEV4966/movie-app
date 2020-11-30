@@ -13,7 +13,7 @@ Create simple movie-app with React JS
 ### API i use : 
 
 * https://www.googleapis.com/youtube/v3/search (YoutubeAPI)
-* https://yts-proxy.now.sh/list_movies.json?sort_by=rating (YTS-proxy-API)    
+* https://yts-proxy.now.sh/list_movies.json?sort_by=rating (YTS-proxy-API from serranoarevalo/yts-proxy)    
  
 
 ### technique
