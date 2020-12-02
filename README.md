@@ -4,7 +4,7 @@ Create simple movie-app with React JS
 
 ## The features :    
 
-* It can shows the movie rank and trailer
+* It can shows the movie information by the order of rank and movie trailer
 * Movie inforamtion is based on 'YTS proxy API'
 * MovieTrailer can show you by youtube
 
