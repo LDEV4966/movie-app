@@ -15,5 +15,5 @@ export default App
 
 
 // exact = {true} 는 오로지 현재 고유의 path 값을 가졌을 때만 component를 rendering 한다
-//Navigation은 path 값으로 이동할 Route를 찾는다.
+//Navigation component는 Link로 Route의 path 값으로 이동할수있다.
 // 모든 Router 는 기본 props 를 가진다.(history,location,match ...)
